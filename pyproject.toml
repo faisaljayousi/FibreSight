@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=64", "wheel", "setuptools_scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "FibreSight"
+dynamic = ["version"]
+description = "Fibre Analysis Library"
+readme = "README.md"
+requires-python = ">=3.7"
+authors = [{name = "Faisal Jayousi", email = "fjayousi90@gmail.com"}]
+maintainers = [{name = "Faisal Jayousi", email = "fjayousi90@gmail.com"}]
+license = {file = "LICENSE"}
+urls = {homepage = "https://github.com/faisaljayousi/FibreSight"}
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Information Analysis"]
+dependencies = [
+    "numpy >= 1.25.0",
+    "skan == 0.11.0",
+    "skl-graph == 2023.15"]
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["tests*"]
+
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "flake8",
+    "isort",
+    "setuptools",
+    "build"]
+
+
+[tool.black]
+line-length = 82
+target-version = ['py37']
+
+
+[tool.isort]
+profile = "black"
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--tb=short -q"
+log_cli = true
+log_cli_level = "INFO"
+log_format = "%(asctime)s %(levelname)s %(message)s"
+log_date_format = "%Y-%m-%d %H:%M:%S"
+filterwarnings = [
+    "error::DeprecationWarning",
+    "error::PendingDeprecationWarning"]
+
+
+[tool.setuptools_scm]
+version_file = "fibsight/_version.py"
