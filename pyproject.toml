@@ -7,7 +7,7 @@ name = "FibreSight"
 dynamic = ["version"]
 description = "Fibre Analysis Library"
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.10"
 authors = [{name = "Faisal Jayousi", email = "fjayousi90@gmail.com"}]
 maintainers = [{name = "Faisal Jayousi", email = "fjayousi90@gmail.com"}]
 license = {file = "LICENSE"}
@@ -20,19 +20,17 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Topic :: Scientific/Engineering :: Information Analysis"]
 
-[tool.poetry.dependencies]
-python = "^3.7"
-numpy = ">=1.25.0"
-skan = "==0.11.0"
-skl-graph = "==2023.15"
+dependencies = [
+    "numpy>=1.25.0",
+    "opencv-python>=4.9.0.80",
+    "skan==0.11.0",
+    "skl-graph==2023.15"
+]
 
 
 [tool.setuptools.packages.find]
