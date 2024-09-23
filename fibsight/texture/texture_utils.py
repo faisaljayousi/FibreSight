@@ -36,15 +36,17 @@ def normalise_wout_zeros(mat):
     mu_nonzero = np.ma.mean(mat_nonzero)  # calculate mean of non-zero values
 
     centered_mat = mat - mu_nonzero  # subtract mean from all values
-    centered_mat[
-        (centered_mat < eps) & (centered_mat > -eps)
-    ] = 0  # numerical correction
+    centered_mat[(centered_mat < eps) & (centered_mat > -eps)] = (
+        0  # numerical correction
+    )
 
-    norm_squared = np.sum(centered_mat ** 2)
+    norm_squared = np.sum(centered_mat**2)
 
     return centered_mat / norm_squared
 
 
-def theta_lamb_comb(theta_vals: np.ndarray, lambd_vals: np.ndarray) -> np.ndarray:
+def theta_lamb_comb(
+    theta_vals: np.ndarray, lambd_vals: np.ndarray
+) -> np.ndarray:
     r"""Returns list of all possible (theta, lambd) combinations"""
     return np.array(np.meshgrid(theta_vals, lambd_vals)).T.reshape(-1, 2)

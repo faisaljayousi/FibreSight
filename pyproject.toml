@@ -47,12 +47,13 @@ dev = [
 
 
 [tool.black]
-line-length = 82
+line-length = 79
 target-version = ['py37']
 
 
 [tool.isort]
 profile = "black"
+line_length = 79
 
 
 [tool.pytest.ini_options]

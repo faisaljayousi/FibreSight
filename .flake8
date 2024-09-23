@@ -1,9 +1,0 @@
-[flake8]
-max-line-length = 82
-exclude =
-    .git,
-    __pycache__,
-    docs,
-    migrations,
-    tests
-ignore=E203,E266,E501,W503,F403,F405,D100,D101,D102,D103,D104,D105,D107,D200,D202,D205,D400,D401,D419,D414

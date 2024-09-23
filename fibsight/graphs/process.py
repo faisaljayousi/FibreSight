@@ -1,5 +1,5 @@
 import logging
-from typing import Callable, Optional, Union
+from typing import Callable, Dict, Optional, Union
 
 import numpy as np
 import skl_graph.map as mp_
@@ -31,7 +31,7 @@ class ImageToGraph:
         self.degMap = None
 
         self.thresholding_factory = ThresholdingFactory()
-        self.partition_methods = {}
+        self.partition_methods: Dict[str, Callable] = {}
 
         # Configure logger
         self.logger = logging.getLogger(__name__)
@@ -80,8 +80,7 @@ class ImageToGraph:
             strategy = self.thresholding_factory.get_method(method_to_use)
             self.binary = strategy(self.image)
             self.logger.info(
-                f"Binary image created using the "
-                f"'{method_to_use}' method."
+                f"Binary image created using the '{method_to_use}' method."
             )
         except ValueError as e:
             self.logger.error(

@@ -42,7 +42,9 @@ def prune_skeleton(
         to_cut = (
             (summary["euclidean-distance"] < min_length)
             & (summary["branch-type"] < 2)
-        ) | ((summary["euclidean-distance"] < 2) & (summary["branch-type"] == 2))
+        ) | (
+            (summary["euclidean-distance"] < 2) & (summary["branch-type"] == 2)
+        )
         pruned = skeleton.prune_paths(np.flatnonzero(to_cut))
         skeleton = pruned
 

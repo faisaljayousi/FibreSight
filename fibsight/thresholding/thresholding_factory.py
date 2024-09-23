@@ -46,7 +46,9 @@ class ThresholdingFactory:
             )
         return method_class()
 
-    def register_method(self, name: str, method_class: Type[ThresholdingMethod]):
+    def register_method(
+        self, name: str, method_class: Type[ThresholdingMethod]
+    ):
         """
         Register a new thresholding method with the factory.
 

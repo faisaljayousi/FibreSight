@@ -36,7 +36,7 @@ class GraphConfig:
         its name is returned; otherwise, `binary_method` is returned.
     """
 
-    binary_method: Optional[str] = "otsu"
+    binary_method: str = "otsu"
     method_callable: Optional[Callable] = None
     skeleton_method: str = "parallel_thinning"
     prune: bool = True

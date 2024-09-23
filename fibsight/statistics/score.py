@@ -29,7 +29,9 @@ class Statistic(ABC):
 
 class AlignScore(Statistic):
     def __call__(self, samples, weights, axis=None):
-        return align_score(samples, high=np.pi, low=0, weights=weights, axis=axis)
+        return align_score(
+            samples, high=np.pi, low=0, weights=weights, axis=axis
+        )
 
 
 def align_score(

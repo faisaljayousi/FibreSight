@@ -1,6 +1,6 @@
 import inspect
 import logging
-from typing import Callable, Dict, Optional, Type, Union
+from typing import Callable, Dict, Optional, Union
 
 import numpy as np
 
@@ -18,7 +18,7 @@ class FibreDescriptor:
     def __init__(
         self,
         image: np.ndarray,
-        config: Type[GraphConfig] = config,
+        config: GraphConfig = config,
         verbose: int = 0,
     ):
         """
@@ -200,7 +200,9 @@ class FibreDescriptor:
                     w = w / w.max()
 
                 if has_weights:
-                    stat = statistic_method(window.ravel(), weights=w, **kwargs)
+                    stat = statistic_method(
+                        window.ravel(), weights=w, **kwargs
+                    )
                 else:
                     stat = statistic_method(window.ravel(), **kwargs)
             else:

@@ -304,7 +304,9 @@ def _max_gabor(
     elif method == "lr":
         return _max_gabor_lr(img, theta_vals, lambd_vals, kernel_params, b)
     else:
-        raise ValueError("Method not recognised. Must be one of {'full', 'lr'}.")
+        raise ValueError(
+            "Method not recognised. Must be one of {'full', 'lr'}."
+        )
 
 
 def lambda_to_sigma(lambd: float, b: float = 1.6) -> float:
@@ -324,5 +326,5 @@ def lambda_to_sigma(lambd: float, b: float = 1.6) -> float:
     - float: Standard deviation (sigma) corresponding to the provided wavelength.
     """
 
-    sigma = lambd / np.pi * np.sqrt(np.log(2) / 2) * (2 ** b + 1) / (2 ** b - 1)
+    sigma = lambd / np.pi * np.sqrt(np.log(2) / 2) * (2**b + 1) / (2**b - 1)
     return sigma

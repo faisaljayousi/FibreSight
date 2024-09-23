@@ -16,7 +16,8 @@ def test_classify_points_relative_to_line():
     )
     expected = np.array([1, -1, 1])
     assert np.array_equal(
-        classify_points_relative_to_line(points, line_start, line_end), expected
+        classify_points_relative_to_line(points, line_start, line_end),
+        expected,
     )
 
     # Test diagonal line (45 degrees)
@@ -31,7 +32,8 @@ def test_classify_points_relative_to_line():
     )
     expected = np.array([1, -1, 1])
     assert np.array_equal(
-        classify_points_relative_to_line(points, line_start, line_end), expected
+        classify_points_relative_to_line(points, line_start, line_end),
+        expected,
     )
 
     # Test points with various shapes
@@ -45,5 +47,6 @@ def test_classify_points_relative_to_line():
     )
     expected = np.array([[1, -1], [1, 1]])
     assert np.array_equal(
-        classify_points_relative_to_line(points, line_start, line_end), expected
+        classify_points_relative_to_line(points, line_start, line_end),
+        expected,
     )
