@@ -24,7 +24,6 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Topic :: Scientific/Engineering :: Information Analysis"]
-
 dependencies = [
     "numpy>=1.25.0",
     "opencv-python>=4.9.0.80",

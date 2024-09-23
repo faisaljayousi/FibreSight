@@ -1,12 +1,14 @@
 # FibreSight - Characterisation of Fibres in 2D-Images
 [![License](https://img.shields.io/github/license/faisaljayousi/FibreSight)](https://opensource.org/licenses/MIT)
 [![Last Commit](https://img.shields.io/github/last-commit/faisaljayousi/FibreSight)](https://github.com/faisaljayousi/FibreSight/commits)
+![GitHub Contributors](https://img.shields.io/github/contributors/faisaljayousi/FibreSight)
 
 **FibreSight** is a Python module designed for advanced analysis and characterisation of fibrous structures in 2D images. This module builds upon the methodologies described in the following paper:
 
 - Jayousi, F., Descombes, X., Bouilhol, E., Sudaka, A., Van Obberghen-Schilling, E., & Blanc-Féraud, L. (2024). *Detection and Characterisation of Fibronectin Structures in the Tumour Extracellular Matrix*. In *32nd European Signal Processing Conference (EUSIPCO) 2024*, Lyon, France, August 26-30, 2024.
 
 This module offers the following functionalities:
+
 - **Image Enhancement**: Enhancement of images using Gabor filters.
 - **Graph Representation**: Extraction of a graph representation of the underlying fibres.
 - **Geometric Partitionning**: Application of custom partition methods to segment images into geometrically homogeneous regions.
@@ -19,15 +21,15 @@ Please [cite this paper](#how-to-cite) if you use this code in your research.
 
 You can install this module using either of the following methods:
 
-### Using pip
+### From PyPI
+
 Coming soon.
 
-### GitHub
+### From GitHub
+
 ```bash
 pip install git+https://github.com/faisaljayousi/FibreSight.git
 ```
-
-This will install the module along with its dependencies as specified in the `setup.py` file of the repository.
 
 ## Usage
 
@@ -48,10 +50,9 @@ Coming soon.
 @inproceedings{jayousi2024,
   author    = {Faisal Jayousi and Xavier Descombes and Emmanuel Bouilhol and Anne Sudaka and Ellen Van Obberghen-Schilling and Laure Blanc-Féraud},
   title     = {Detection and Characterisation of Fibronectin Structures in the Tumour Extracellular Matrix},
-  booktitle = {32nd European Signal Processing Conference, {EUSIPCO} 2024, Lyon, France, August 26-30, 2024},
-  pages     = {},
-  year      = {2024},
-  doi       = {}
+  booktitle = {32nd European Signal Processing Conference, {EUSIPCO}, Lyon, France, August 26-30},
+  pages     = {1656-1660},
+  year      = {2024}
 }
 ```
 

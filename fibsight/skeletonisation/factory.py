@@ -99,6 +99,4 @@ class SkeletonisationFactory:
             listing all available methods.
         """
         available_methods = ", ".join(self.methods.keys())
-        return (
-            f"SkeletonisationFactory(" f"available_methods={available_methods})"
-        )
+        return f"SkeletonisationFactory(available_methods={available_methods})"

@@ -80,7 +80,8 @@ class ImageToGraph:
             strategy = self.thresholding_factory.get_method(method_to_use)
             self.binary = strategy(self.image)
             self.logger.info(
-                f"Binary image created using the " f"'{method_to_use}' method."
+                f"Binary image created using the "
+                f"'{method_to_use}' method."
             )
         except ValueError as e:
             self.logger.error(

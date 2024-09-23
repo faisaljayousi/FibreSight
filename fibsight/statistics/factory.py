@@ -28,4 +28,4 @@ class StatisticsFactory:
 
     def __repr__(self):
         available_methods = ", ".join(self.methods.keys())
-        return f"StatisticsFactory(" f"available_methods={available_methods})"
+        return f"StatisticsFactory(available_methods={available_methods})"
