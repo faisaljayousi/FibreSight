@@ -1,13 +1,21 @@
+from abc import ABC, abstractmethod
 from typing import Dict, Type
-
-from .score import AlignScore
-from .statistic import Statistic
+from .tortuosity import Tortuosity
 
 
-class StatisticsFactory:
+
+class GraphAttribute(ABC):
+    @abstractmethod
+    def __call__(self, *args, **kwargs):
+        """
+        """
+        pass
+
+
+class GraphAttributeFactory:
     def __init__(self):
-        self.methods: Dict[str, Type[Statistic]] = {
-            "align_score": AlignScore,
+        self.methods: Dict[str, Type[GraphAttribute]] = {
+            "tortuosity": Tortuosity
         }
 
     def get_method(self, method: str):
@@ -20,8 +28,8 @@ class StatisticsFactory:
             )
         return method_class()
 
-    def register_method(self, name: str, method_class: Type[Statistic]):
-        if not issubclass(method_class, Statistic):
+    def register_method(self, name: str, method_class: Type[GraphAttribute]):
+        if not issubclass(method_class, GraphAttribute):
             raise ValueError(
                 "Registered method must be a subclass of `Statistic`."
             )
@@ -29,4 +37,4 @@ class StatisticsFactory:
 
     def __repr__(self):
         available_methods = ", ".join(self.methods.keys())
-        return f"StatisticsFactory(available_methods={available_methods})"
+        return f"GraphAttributesFactory(available_methods={available_methods})"
