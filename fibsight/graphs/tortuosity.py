@@ -1,5 +1,7 @@
-from .attributes_factory import GraphAttribute
 import numpy as np
+
+from .attributes_factory import GraphAttribute
+
 
 class Tortuosity(GraphAttribute):
     def __call__(self, G, metric="l2"):
@@ -9,7 +11,7 @@ class Tortuosity(GraphAttribute):
 def tortuosity(G):
     tortuosity_dict = {}
 
-    for (start_node, end_node, edge_data) in G.edges.data("details"):
+    for start_node, end_node, edge_data in G.edges.data("details"):
         x0, y0 = map(int, start_node.split("-"))
         x1, y1 = map(int, end_node.split("-"))
 

@@ -4,7 +4,7 @@ from typing import Dict
 import cv2
 import numpy as np
 
-from ._utils import normalise_pm, theta_lamb_comb
+from .texture_utils import normalise_pm, theta_lamb_comb
 
 # @dataclass
 # class GaborKernelParams:
@@ -163,9 +163,9 @@ def _max_gabor_full(
         raise ValueError("`lambd_vals` must not be empty.")
 
     # Initialise arrays to store results
-    max_responses = np.zeros_like(img)
-    optimal_angles = np.zeros_like(img)
-    optimal_wavelengths = np.zeros_like(img)
+    max_responses = np.zeros_like(img, dtype=np.float64)
+    optimal_angles = np.zeros_like(img, dtype=np.float64)
+    optimal_wavelengths = np.zeros_like(img, dtype=np.float64)
 
     for angle, wavelength in theta_lamb_comb(theta_vals, lambd_vals):
         sigma = lambda_to_sigma(wavelength, b)
@@ -205,9 +205,15 @@ def gabor_lr(
 
     # img = normalise_gaussian(img, sig)  # local normalisation
 
-    thetas_left, thetas_right = np.zeros_like(img), np.zeros_like(img)
-    lambds_left, lambds_right = np.zeros_like(img), np.zeros_like(img)
-    response_left, response_right = np.zeros_like(img), np.zeros_like(img)
+    thetas_left, thetas_right = np.zeros_like(
+        img, dtype=np.float64
+    ), np.zeros_like(img, dtype=np.float64)
+    lambds_left, lambds_right = np.zeros_like(
+        img, dtype=np.float64
+    ), np.zeros_like(img, dtype=np.float64)
+    response_left, response_right = np.zeros_like(
+        img, dtype=np.float64
+    ), np.zeros_like(img, dtype=np.float64)
 
     kernel = cv2.getGaborKernel(
         kernel_params["size"],
@@ -275,9 +281,9 @@ def _max_gabor_lr(
         - An array with the maximum responses for each pixel.
     """
 
-    response = np.zeros_like(img)
-    thetas = np.zeros_like(img)
-    lambds = np.zeros_like(img)
+    response = np.zeros_like(img, dtype=np.float64)
+    thetas = np.zeros_like(img, dtype=np.float64)
+    lambds = np.zeros_like(img, dtype=np.float64)
 
     for theta, lambd in theta_lamb_comb(theta_vals, lambd_vals):
         _, _, filtered_FN = gabor_lr(img, theta, lambd, kernel_params, b)

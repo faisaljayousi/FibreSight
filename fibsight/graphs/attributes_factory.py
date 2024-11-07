@@ -1,14 +1,13 @@
 from abc import ABC, abstractmethod
 from typing import Dict, Type
-from .tortuosity import Tortuosity
 
+from .tortuosity import Tortuosity
 
 
 class GraphAttribute(ABC):
     @abstractmethod
     def __call__(self, *args, **kwargs):
-        """
-        """
+        """ """
         pass
 
 

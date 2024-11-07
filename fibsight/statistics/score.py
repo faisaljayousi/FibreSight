@@ -1,30 +1,9 @@
-from abc import ABC, abstractmethod
 from typing import Optional, Tuple, Union
 
 import numpy as np
 
-from ._utils import _circfuncs_common
-
-
-class Statistic(ABC):
-    @abstractmethod
-    def __call__(self, *args, **kwargs):
-        """
-        Compute the statistic.
-
-        Parameters
-        ----------
-        *args : tuple
-            Positional arguments specific to the statistic method.
-        **kwargs : dict
-            Keyword arguments specific to the statistic method.
-
-        Returns
-        -------
-        float
-            Computed statistic.
-        """
-        pass
+from .statistic import Statistic
+from .statistics_utils import _circfuncs_common
 
 
 class AlignScore(Statistic):

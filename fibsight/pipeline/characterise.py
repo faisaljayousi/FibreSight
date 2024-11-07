@@ -7,7 +7,7 @@ import numpy as np
 import fibsight as fs
 from fibsight.custom.config_template import GraphConfig
 from fibsight.graphs.process import ImageToGraph
-from fibsight.statistics.factory import Statistic, StatisticsFactory
+from fibsight.statistics.statistics_factory import Statistic, StatisticsFactory
 from fibsight.texture.gabor import _max_gabor
 from fibsight.utils import log_method
 

@@ -1,4 +1,4 @@
-from .factory import SkeletonisationFactory
+from .skel_factory import SkeletonisationFactory
 from .skeleton_methods import (
     LeeSkeleton,
     MedialAxisSkeleton,

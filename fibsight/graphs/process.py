@@ -7,12 +7,12 @@ from scipy.spatial import Voronoi
 from skl_graph.graph import skl_graph_t
 
 import fibsight as fs
-from fibsight.skeletonisation.factory import (
+from fibsight.skeletonisation.skel_factory import (
     ParallelThinning,
     SkeletonisationFactory,
     SkeletonisationMethod,
 )
-from fibsight.thresholding.factory import ThresholdingFactory
+from fibsight.thresholding.thresholding_factory import ThresholdingFactory
 
 from .prune import prune_skeleton
 
