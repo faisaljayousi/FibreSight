@@ -39,6 +39,8 @@ exclude = ["tests*"]
 
 [project.optional-dependencies]
 dev = [
+    "exceptiongroup>=1.0.0rc8; python_version < '3.11'",
+    "tomli>=1; python_version < '3.11'",
     "pytest",
     "flake8",
     "isort",

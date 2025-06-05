@@ -3,6 +3,8 @@ import skan
 from skimage import measure
 from skimage.morphology import remove_small_holes, skeletonize
 
+np.float_ = float  # overrides deprecated alias with built-in float
+
 
 def prune_skeleton(
     skeleton: np.ndarray, min_length: int, max_iter: int = 5

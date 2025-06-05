@@ -10,7 +10,7 @@ Email: fjayousi90@gmail.com
 import logging
 
 from fibsight.pipeline.characterise import FibreDescriptor, ImageToGraph
-from fibsight.thresholding.factory import (
+from fibsight.thresholding.thresholding_factory import (
     ThresholdingFactory,
     ThresholdingMethod,
 )
